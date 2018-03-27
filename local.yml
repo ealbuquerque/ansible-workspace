@@ -5,4 +5,4 @@
   - name: Install packages
     apt: name={{item}}
     with_items:
-      - p
+      - htop
