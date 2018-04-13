@@ -1,0 +1,19 @@
+---
+- name: Add key
+  apt_key: 
+    url: "{{ docker_key }}" 
+    state: present
+  become: true
+
+- name: Add repo
+  apt_repository: 
+    repo: "{{ apt_repo }} {{ ansible_distribution_release }} stable"
+    update_cache: yes
+  become: true
+
+- name: Install Docker
+  apt: 
+    pkg: docker-ce 
+    state: present 
+    force: yes
+  become: true

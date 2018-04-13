@@ -1,0 +1,18 @@
+- name: Check if skype is installed
+  command: dpkg-query -W skypeforlinux
+  register: skype_check_deb
+  failed_when: skype_check_deb.rc > 1
+  changed_when: skype_check_deb.rc == 1
+
+- name: Download .deb
+  get_url: 
+    url: "{{ skype_url }}"
+    dest: "/tmp/skype.deb"
+  when: skype_check_deb.rc == 1
+
+- name: Install latest skype package
+  apt: 
+    deb: "/tmp/skype.deb"
+    update_cache: yes
+  when: skype_check_deb.rc == 1
+  become: true

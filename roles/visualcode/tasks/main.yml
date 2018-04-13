@@ -1,0 +1,29 @@
+---
+- name: install key
+  apt_key:
+    url: "{{ vscode_ulrkey }}"
+    state: present
+  become: true
+
+- name: install VS Code repo
+  apt_repository:
+    repo: deb [arch=amd64] {{ vscode_repo }} stable main
+    state: present
+  become: true
+
+- name: install VS Code Insiders
+  apt:
+    name: code-insiders
+    update_cache: true
+    state: present
+  become: true
+
+- name: Install extensions
+  command: code-insiders --install-extension "{{ item }}"
+  with_items: 
+    - "{{ visual_studio_code_extensions }}"
+  state: present
+  become: true
+  become_user: "{{ user }}"
+  register: vscode_result
+  changed_when: "'already installed' not in vscode_result.stdout"

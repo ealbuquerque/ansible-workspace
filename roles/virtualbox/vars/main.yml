@@ -1,0 +1,6 @@
+---
+virtualbox_version_url: http://download.virtualbox.org/virtualbox/LATEST.TXT
+virtualbox_repo: deb https://download.virtualbox.org/virtualbox/debian artful contrib
+virtualbox_key: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+virtualbox_version: 5.2
+virtualbox_ext_version: 5-2-8

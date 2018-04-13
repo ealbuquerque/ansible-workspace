@@ -1,0 +1,22 @@
+---
+- hosts: testenv
+  gather_facts: false
+  roles:
+    - pre
+    - common
+    - firefoxdeveloper
+    - spotify
+    - skype
+    - mattermost
+    - virtualbox
+    - vagrant
+    - go
+    - java
+    - docker
+    - docker-compose
+    - visualcode
+    # - goland
+    # - datagrip
+    # - intellij
+    # - rider
+    # - turtl

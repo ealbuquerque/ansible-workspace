@@ -1,0 +1,14 @@
+---
+- name: Download Docker Compose
+  shell: curl -L {{ compose_url }}-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose warn=False 
+  become: true
+
+- name: Apply permissionslsb_release -a
+  file: 
+    dest: /usr/local/bin/docker-compose 
+    mode: a+x
+  become: true
+
+- name: Install command completion
+  shell: curl -L {{ compose_completition_url }} -o /etc/bash_completion.d/docker-compose warn=False
+  become: true

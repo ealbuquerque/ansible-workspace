@@ -1,0 +1,13 @@
+---
+- name: add Repo
+  apt_repository: 
+    repo: "{{ repogo }}"
+    update_cache: yes 
+  become: true
+
+- name: install package
+  apt: 
+    pkg: "{{ versiongo }}"
+    state: present 
+    force: yes
+  become: true

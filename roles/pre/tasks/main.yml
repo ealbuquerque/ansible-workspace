@@ -1,0 +1,12 @@
+---
+- name: Install python for Ansible
+  raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+  register: output
+  changed_when: output.stdout != ""
+  become: true
+
+- name: Update apt cache
+  apt: 
+    update_cache: yes 
+    cache_valid_time: 3600
+  become: true

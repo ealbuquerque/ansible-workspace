@@ -1,0 +1,4 @@
+---
+spotify_repo: deb http://repository.spotify.com stable non-free
+key_server:  hkp://keyserver.ubuntu.com:80
+id_key_server: 341D9410

@@ -1,0 +1,27 @@
+---
+- name: Add apt key
+  apt_key: 
+    url: "{{ virtualbox_key }}" 
+    state: present
+  become: true
+
+- name: Add apt package source
+  apt_repository: 
+    repo: "{{ virtualbox_repo }}" 
+    update_cache: yes
+    state: present
+  become: true
+
+- name: Install latest virtualbox package
+  apt: 
+    pkg: "virtualbox-{{ virtualbox_version }}" 
+    state: present 
+    force: yes
+  become: true
+
+# Fazer download dos extras
+
+# Instalar os extras
+# - name: Install extras
+#  shell: VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_ext_version }}.vbox-extpack
+#  become: true

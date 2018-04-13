@@ -1,0 +1,44 @@
+---
+- setup:
+
+- name: Get kernell
+  shell: echo linux-headers-$(uname -r)
+  register: kernell
+
+- name: Add repository
+  apt_repository: 
+    repo: deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} main universe restricted multiverse 
+    update_cache: yes
+    state: present
+  become: true
+
+- name: Install common
+  apt: 
+    pkg: "{{ item }}" 
+    state: latest 
+    update_cache: yes
+    force: yes
+  with_items:
+    - wget
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - gconf2
+    - libasound2
+    - libgtk2.0-0
+    - libxss1
+    - software-properties-common
+    - "{{ kernell.stdout }}"
+    - dkms
+    - gcc
+    - make
+    - git
+    - git-lfs
+    - terminator
+    - vim
+    - krita
+    - chromium-browser
+    - gnome-tweak-tool
+    - gnome-shell
+    - remmina
+  become: true

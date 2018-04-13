@@ -1,0 +1,3 @@
+---
+vagrant_version: vagrant_2.0.3_x86_64
+vagrant_url: https://releases.hashicorp.com/vagrant/2.0.3/{{ vagrant_version }}.deb
