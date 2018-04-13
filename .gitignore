@@ -1,0 +1,6 @@
+.vagrant/
+.vscode/
+._*
+*.retry
+*.log
+vbox_host.cfg
