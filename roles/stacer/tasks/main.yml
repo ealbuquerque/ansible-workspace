@@ -1,13 +1,19 @@
 ---
-- name: Add stacer repo
-  apt_repository: 
-    repo: "{{ stacer_repo }}" 
-    update_cache: yes 
-    state: present
+- name: Check if stacer is installed
+  command: dpkg-query -W stacer
+  register: stacer_check_deb
+  failed_when: stacer_check_deb.rc > 1
+  changed_when: stacer_check_deb.rc == 1
+
+- name: Download stacer
+  get_url: 
+    url: "{{ stacer_url }}"
+    dest: "/tmp/stacer.deb"
+  when: stacer_check_deb.rc == 1
   become: true
 
 - name: Install stacer
   apt: 
-    pkg: "stacer" 
-    state: latest
+    deb: "/tmp/stacer.deb"
+  when: stacer_check_deb.rc == 1
   become: true
