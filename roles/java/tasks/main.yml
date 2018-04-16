@@ -25,7 +25,7 @@
 - name: Install Java
   apt:
     name: "{{ apt_java_package }}"
-    state: "latest"
+    state: latest
     update_cache: yes
   become: yes
 
