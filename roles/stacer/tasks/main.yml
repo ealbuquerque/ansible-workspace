@@ -1,0 +1,13 @@
+---
+- name: Add stacer repo
+  apt_repository: 
+    repo: "{{ stacer_repo }}" 
+    update_cache: yes 
+    state: present
+  become: true
+
+- name: Install stacer
+  apt: 
+    pkg: "stacer" 
+    state: latest
+  become: true
