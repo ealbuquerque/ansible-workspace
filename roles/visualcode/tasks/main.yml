@@ -22,6 +22,7 @@
   command: code-insiders --install-extension "{{ item }}"
   with_items: 
     - "{{ visual_studio_code_extensions }}"
+    - skip_missing: yes
   state: present
   become: true
   become_user: "{{ user }}"
