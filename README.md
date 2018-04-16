@@ -1,5 +1,9 @@
 # Instalação de ambiente de desenvolvimento padrão ZarthJr de qualidade :thumbsup: :poop:
 
+Instalação do ambiente de desenvolvimento padrão.
+
+Suporte apenas para **Ubuntu**
+
 ## Passos de instalação
 
 * Instalar o Ansible:
