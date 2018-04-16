@@ -1,18 +1,18 @@
 ---
 - setup:
 
-- name: Get kernell
+- name: Get Kernell
   shell: echo linux-headers-$(uname -r)
   register: kernell
 
-- name: Add repository
+- name: Add Repository
   apt_repository: 
     repo: deb http://archive.ubuntu.com/ubuntu {{ ansible_distribution_release }} main universe restricted multiverse 
     update_cache: yes
     state: present
   become: true
 
-- name: Install common
+- name: Install Common
   apt: 
     pkg: "{{ item }}" 
     state: latest 
@@ -40,8 +40,20 @@
     - chromium-browser
     - gnome-tweak-tool
     - gnome-shell
-    - remmina
+    - chrome-gnome-shell
+    - gparted
+    - python3-dev 
+    - python3-pip
   become: true
+
+- name: The Fuck
+  command: pip3 install thefuck
+  become: true
+
+- name: Config The Fuck
+  lineinfile: 
+    name: ~/.bashrc
+    line: "eval $(thefuck --alias)"
 
 - name: Config Bash
   lineinfile:
