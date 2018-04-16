@@ -15,7 +15,8 @@
     - docker
     - docker-compose
     - visualcode
-    - stacer
+    # - stacer
+    - remmina
     # - androidstudio
     # - goland
     # - datagrip
