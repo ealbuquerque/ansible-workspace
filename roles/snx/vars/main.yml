@@ -1,0 +1,9 @@
+---
+script_snx: https://cdn.labtrans.ufsc.br/s2id/sup/snx_s2id.sh
+snx_dependencies:
+  - gcc-multilib
+  - libpam0g:i386 
+  - libx11-6:i386 
+  - libstdc++6:i386 
+  - libstdc++5:i386
+ 

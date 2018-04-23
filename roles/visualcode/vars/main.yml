@@ -3,23 +3,7 @@ vscode_repo: https://packages.microsoft.com/repos/vscode
 vscode_ulrkey: https://packages.microsoft.com/keys/microsoft.asc
 
 visual_studio_code_extensions:
-  - PeterJausovec.vscode-docker
-  - cstuder.gitlab-ci-validator
-  - wholroyd.jinja
-  - haaaad.ansible
-  - DavidAnson.vscode-markdownlint
-  - eamodio.gitlens
-  - dbaeumer.vscode-eslint
-  - shd101wyy.markdown-preview-enhanced
-  # - marcostazi.vs-code-vagrantfile
-  - redhat.vscode-yaml
-  - HookyQR.beautify
-  # - zhuangtongfa.material-theme
-  # - lukehoban.go
-  - PKief.material-icon-theme
-  - eg2.vscode-npm-script
-  - DotJoshJohnson.xml
-  - wayou.vscode-todo-highlight
-  - mohsen1.prettify-json
-  - hbenl.vscode-firefox-debug
-  
+  - Shan.code-settings-sync
+  - Toke Setting:  b433e5436f4644bb4e5382d6a5db791c04b47f0c
+
+/home/zarthjr/.config/Code - Insiders/User/syncLocalSettings.json

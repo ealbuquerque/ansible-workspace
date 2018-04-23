@@ -14,5 +14,6 @@
   apt: 
     deb: "/tmp/skype.deb"
     update_cache: yes
+    force: yes
   when: skype_check_deb.rc == 1
   become: true

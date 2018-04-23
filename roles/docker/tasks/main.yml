@@ -13,7 +13,7 @@
 
 - name: Install Docker
   apt: 
-    pkg: docker-ce 
+    name: docker-ce 
     state: present 
     force: yes
   become: true

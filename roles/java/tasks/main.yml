@@ -22,6 +22,10 @@
     vtype: "select"
   become: true
 
+- name: Wait for automatic system updates
+  become: true
+  shell: while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 1; done;
+  
 - name: Install Java
   apt:
     name: "{{ apt_java_package }}"
@@ -29,3 +33,6 @@
     update_cache: yes
   become: yes
 
+- name: Wait for automatic system updates
+  become: true
+  shell: while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 1; done;

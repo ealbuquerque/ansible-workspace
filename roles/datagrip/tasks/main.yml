@@ -1,0 +1,4 @@
+---
+- name: install datagrip via snap
+  command: snap install datagrip --classic
+  become: true

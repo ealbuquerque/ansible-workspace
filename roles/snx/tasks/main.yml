@@ -1,0 +1,37 @@
+---
+- name: Check if snx is installed
+  command: dpkg-query -W snx
+  register: snx_check
+  failed_when: snx_check.rc > 1
+  changed_when: snx_check.rc == 1
+
+- name: Install dependencies
+  apt:
+    name: "{{ item }}"
+    state: latest 
+    update_cache: yes
+  with_items:
+    - "{{ snx_dependencies }}"
+  changed_when: snx_check.rc == 1
+  become: true
+
+- name: Download script_snx
+  get_url: 
+    url: "{{ script_snx }}"
+    dest: "/tmp/snx.sh"
+    force: yes
+    validate_certs: no
+  when: snx_check.rc == 1
+  become: true
+
+- name: Mark executable
+  file: 
+    dest: "/tmp/snx.sh"
+    mode: a+x
+  when: snx_check.rc == 1
+  become: true
+
+- name: Install snx
+  shell: "sh /tmp/snx.sh"
+  when: snx_check.rc == 1
+  become: true

@@ -26,15 +26,21 @@ $ sudo apt-get install ansible
 
 * Instalação:
   * Android Studio
+  * Nvidia Drivers
+  * Steam
   * DataGrip
-  * GoLand
+  * GoLand (https://gist.github.com/szarthjr/88ceae7b0aedc38410d4de65764c1fae)
   * IntelliJ
   * Rider
   * Turtl
-* Configuração dos paths do Go
+* Disable do auto update
 * Replicar configurações dos softwares mais usados
 * Instalação das extensões do gnome e suas respectivas configurações
   * User Themes
   * Top Icons Plus
   * No Title Bar
+* Criação de handler para apt
+* Fontes do sistema
+* Remoção do problema com o repo security 
+* Instalar os extras do virtualbox
 * Fazer uma versão para o windows

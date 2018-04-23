@@ -17,3 +17,9 @@
     deb: "/tmp/{{ vagrant_version }}.deb"
   when: vagrant_check_deb.rc == 1
   become: true
+
+- name: Update and Upgrade apt cache
+  apt: 
+    update_cache: yes 
+    upgrade: yes
+  become: true

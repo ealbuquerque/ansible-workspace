@@ -14,7 +14,7 @@
 
 - name: Install latest virtualbox package
   apt: 
-    pkg: "virtualbox-{{ virtualbox_version }}" 
+    name: "virtualbox-{{ virtualbox_version }}" 
     state: present 
     force: yes
   become: true

@@ -7,7 +7,7 @@
 
 - name: install package
   apt: 
-    pkg: "{{ versiongo }}"
+    name: "{{ versiongo }}"
     state: present 
     force: yes
   become: true
