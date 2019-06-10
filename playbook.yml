@@ -9,16 +9,14 @@
      - mattermost
      - virtualbox
      - vagrant
-     - java
      - docker
      - docker-compose
      #- visualcode
      - stacer
      - remmina
-     - androidstudio
      - datagrip
-     - intellij
-     - rider
      - turtl
      - snx
+     - sdk-man
+     - java8
     

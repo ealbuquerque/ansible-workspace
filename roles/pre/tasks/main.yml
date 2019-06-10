@@ -4,10 +4,3 @@
   register: output
   changed_when: output.stdout != ""
   become: true
-
-# - name: Update and Upgrade apt cache
-# apt: 
-#   update_cache: yes 
-#   upgrade: yes
-#   force: yes
-# become: true

@@ -1,11 +1,4 @@
 ---
-# - name: Add spotify key
-#  apt_key: 
- #   keyserver: "{{ key_server }}"
- #   id: "{{ id_key_server }}" 
- #   state: present
- # become: true
-
 - name: Add spotify repo
   apt_repository: 
     repo: "{{ spotify_repo }}" 
