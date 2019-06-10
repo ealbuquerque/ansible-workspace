@@ -1,4 +1,4 @@
-# Instalação de ambiente de desenvolvimento padrão ZarthJr de qualidade :thumbsup: :poop:
+# Instalação de ambiente de desenvolvimento
 
 Instalação do ambiente de desenvolvimento padrão.
 
@@ -6,21 +6,31 @@ Suporte apenas para **Ubuntu**
 
 ## Passos de instalação
 
-* Instalar o Ansible:
+1. Instalar o Ansible:
 
 ```bash
-$ sudo apt-get update
-$ sudo apt-get install software-properties-common
-$ sudo apt-add-repository ppa:ansible/ansible
-$ sudo apt-get update
-$ sudo apt-get install ansible
+sudo apt-get update && \
+sudo apt-get install software-properties-common && \
+sudo apt-add-repository ppa:ansible/ansible && \
+sudo apt-get update && \
+sudo apt-get install ansible
 ```
 
-* Baixar este projeto
-* Alterar o host do playbook.yml para localhost (instalação local) ou para O VagrantFile, caso queira testar.
-* Alterar a variável de usuário em ./group_vars/all.yml para o usário criado na instalação do S.O.
-* Para rodar:
-  * Ansible-playbook -vv  playbook.yml --extra-vars 'ansible_become_pass=zzzz'
+2. Clonar este projeto
+
+```bash
+git clone https://github.com/ealbuquerque/ansible-workspace.git
+```
+
+3. Alterar o host do playbook.yml para localhost (instalação local) ou para O VagrantFile, caso queira testar.
+
+4. Alterar a variável de usuário em ./group_vars/all.yml para o usário criado na instalação do S.O.
+
+5. Para rodar:
+
+```bash
+ansible-playbook -vv  playbook.yml --extra-vars 'ansible_become_pass=YOUR_PASSWORD'
+```
 
 ## Próximos Passos
 
@@ -29,7 +39,6 @@ $ sudo apt-get install ansible
   * Nvidia Drivers
   * Steam
   * DataGrip
-  * GoLand (https://gist.github.com/szarthjr/88ceae7b0aedc38410d4de65764c1fae)
   * IntelliJ
   * Rider
   * Turtl

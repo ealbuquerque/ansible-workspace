@@ -1,25 +1,21 @@
 ---
-- hosts: local
+- hosts: localhost
   gather_facts: true 
-  # gather_facts: false
   roles:
      - pre
      - common
-     - firefoxdeveloper
      - spotify
      - skype
      - mattermost
      - virtualbox
      - vagrant
-     - go
      - java
      - docker
      - docker-compose
-     - visualcode
+     #- visualcode
      - stacer
      - remmina
      - androidstudio
-     - goland
      - datagrip
      - intellij
      - rider
